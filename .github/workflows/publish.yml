@@ -4,7 +4,7 @@ name: Publish to npm
 on:
   push:
     tags:
-      - 'v*.*.*'  # Only triggers on version tags like v1.0.0
+      - 'v*.*.*' # Only triggers on version tags like v1.0.0
 
 jobs:
   publish:
@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test  # Optional: Add this if you have tests
+        run: npm test # Optional: Add this if you have tests
 
       - name: Build the project
         run: npm run build
