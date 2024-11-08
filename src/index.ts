@@ -14,44 +14,44 @@ if (!DATABASE_NAME) console.warn('DATABASE_NAME is missing; using database name 
 console.log('Preparing to connect to MongoDB...');
 
 const connectToDatabase = async (): Promise<void> => {
-	try {
-		await mongoose.connect(MONGO_URI, {
-			dbName: DATABASE_NAME,
-			minPoolSize: 5,
-			retryWrites: true,
-			w: 'majority',
-			serverSelectionTimeoutMS: CONNECTION_TIMEOUT,
-		});
-		console.info('Connected to uri ' + MONGO_URI);
-	} catch (error: any) {
-		console.error('Error connecting to MongoDB:', error.message || error);
-	}
+  try {
+    await mongoose.connect(MONGO_URI, {
+      dbName: DATABASE_NAME,
+      minPoolSize: 5,
+      retryWrites: true,
+      w: 'majority',
+      serverSelectionTimeoutMS: CONNECTION_TIMEOUT,
+    });
+    console.info('Connected to uri ' + MONGO_URI);
+  } catch (error: any) {
+    console.error('Error connecting to MongoDB:', error.message || error);
+  }
 };
 
 const isDatabaseConnected = (): boolean => {
-	return mongoose.connection.readyState === 1; // 1 means connected
+  return mongoose.connection.readyState === 1; // 1 means connected
 };
 
 const closeDatabaseConnection = (): void => {
-	mongoose
-		.disconnect()
-		.then(() => console.info('MongoDB disconnected successfully.'))
-		.catch((err) => console.error('Error disconnecting MongoDB:', err));
+  mongoose
+    .disconnect()
+    .then(() => console.info('MongoDB disconnected successfully.'))
+    .catch((err) => console.error('Error disconnecting MongoDB:', err));
 };
 
 const reconnectDatabase = async (): Promise<void> => {
-	if (!isDatabaseConnected()) {
-		console.info('Attempting to reconnect to MongoDB...');
-		await connectToDatabase();
-	} else {
-		console.info('MongoDB is already connected.');
-	}
+  if (!isDatabaseConnected()) {
+    console.info('Attempting to reconnect to MongoDB...');
+    await connectToDatabase();
+  } else {
+    console.info('MongoDB is already connected.');
+  }
 };
 
 export default {
-	connectToDatabase,
-	isDatabaseConnected,
-	closeDatabaseConnection,
-	reconnectDatabase,
-	applyPaginationFilter,
+  connectToDatabase,
+  isDatabaseConnected,
+  closeDatabaseConnection,
+  reconnectDatabase,
+  applyPaginationFilter,
 };
