@@ -12,24 +12,24 @@ jobs:
 
     steps:
       - name: Check out the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # Check out the latest code in your repo
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://registry.npmjs.org' # Correct URL for npm registry
 
       - name: Install dependencies
-        run: npm install
+        run: npm install # Installs all dependencies listed in package.json
 
       - name: Run tests
-        run: npm test # Optional: Add this if you have tests
+        run: npm test # Optional: Add this if you have test scripts
 
       - name: Build the project
-        run: npm run build
+        run: npm run build # Build the project with TypeScript
 
       - name: Publish to npm
-        run: npm publish
+        run: npm publish --access public # Publish as public for scoped packages
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Use the npm token from GitHub secrets
