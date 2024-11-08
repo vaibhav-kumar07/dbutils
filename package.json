@@ -11,7 +11,8 @@
     "scripts": {
         "build": "tsc",
         "prepublishOnly": "npm run build",
-        "dev": "ts-node test.ts"
+        "dev": "ts-node test.ts",
+        "test": "echo \"No tests available\" && exit 0"
     },
     "keywords": [],
     "author": "",
