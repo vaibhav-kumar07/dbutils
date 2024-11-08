@@ -1,6 +1,6 @@
 {
-    "name": "@api/dbutils",
-    "version": "1.0.13",
+    "name": "@api-utils/dbutils",
+    "version": "1.0.14",
     "description": "",
     "main": "dist/index.js",
     "types": "index.d.ts",
