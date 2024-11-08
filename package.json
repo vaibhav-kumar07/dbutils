@@ -1,3 +1,4 @@
+
 {
     "name": "@vaibhav3777/dbutils",
     "version": "1.0.0",
@@ -11,7 +12,8 @@
     "scripts": {
         "build": "tsc",
         "prepublishOnly": "npm run build",
-        "dev": "ts-node test.ts"
+        "dev": "ts-node test.ts",
+        "test": "echo \"No tests available\" && exit 0"
     },
     "keywords": [],
     "author": "",
