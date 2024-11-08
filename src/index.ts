@@ -48,7 +48,7 @@ const reconnectDatabase = async (): Promise<void> => {
 	}
 };
 
-export = {
+export default {
 	connectToDatabase,
 	isDatabaseConnected,
 	closeDatabaseConnection,
