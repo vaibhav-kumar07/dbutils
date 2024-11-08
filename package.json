@@ -1,6 +1,6 @@
 
 {
-    "name": "@vaibhav3777/dbutils",
+    "name": "@api-utils/dbutils",
     "version": "1.0.9",
     "description": "",
     "main": "dist/index.js",
