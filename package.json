@@ -1,0 +1,27 @@
+{
+    "name": "dbutils",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "index.d.ts",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "build": "tsc",
+        "prepublishOnly": "npm run build",
+        "dev": "ts-node test.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^22.9.0",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.6.3"
+    },
+    "dependencies": {
+        "moment": "^2.30.1"
+    }
+}
