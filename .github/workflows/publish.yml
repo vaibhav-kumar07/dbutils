@@ -2,7 +2,9 @@
 name: Publish to npm
 
 on:
-  push:
+    push:
+    branches:
+      - main  # Only triggers on pushes to the main branch
     tags:
       - 'v*.*.*' # Only triggers on version tags like v1.0.0
 
